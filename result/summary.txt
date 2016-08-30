@@ -1,0 +1,12 @@
+Succesfully trained the model of products!
+
+743 products were used
+944 unique key words found.
+Let's explore the listings.
+On average it took 0.197 milliseconds to crunch each listing based on the trained model.
+The results file format; each line:
+ {'product_title':'name of the product', listing:[list of the matched]}
+Some info:
+	Given the size of the trained matrix, a new listing would take 3.075 milliseconds          to run against the model.
+	 3057 match found.
+/tfor 162 products, at least, one match was found

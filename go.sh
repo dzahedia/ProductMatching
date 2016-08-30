@@ -17,7 +17,7 @@ echo "Do you want to continue? (y/n)"
 read req
 if [ "$req" == "y" ]
   then
-  echo "It won't take more than 2 minutes!"
+  echo "On a ThinkPad core i5, it takes 2 minutes!"
   python3 entrypoint.py
 fi
 echo "Done"

@@ -97,7 +97,7 @@ class Model(object) :
             else:
                 outDic[v] = OrderedDict()
                 outDic[v]['listings'] = []
-                outDic[v]['product title'] = invIndProd[v]['product_name']
+                outDic[v]['product_name'] = invIndProd[v]['product_name']
                 if k in invIndList.keys():
                     outDic[v]['listings'].append(invIndList[k])
 
@@ -106,7 +106,7 @@ class Model(object) :
         with open(resultFile,'w') as f:
             for i in range(len(outJson)):
                 tmp = OrderedDict()
-                tmp['product title'] = outJson[i]['product title']
+                tmp['product_name'] = outJson[i]['product_name']
                 tmp['listings'] = outJson[i]['listings']
                 json.dump(tmp, f)
                 f.write('\n')

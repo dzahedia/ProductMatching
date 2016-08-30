@@ -18,9 +18,9 @@ read req
 if [ "$req" == "y" ]
   then
   echo
-  echo "On a ThinkPad core i5, it takes 2 minutes to run!"
+  echo "On a ThinkPad core i5, the program takes 2 minutes to run!"
   echo
-  python3.4 entrypoint.py
+  python3 entrypoint.py
 fi
 echo "Done"
 

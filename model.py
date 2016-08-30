@@ -6,7 +6,7 @@ from datetime import datetime
 import json
 import os
 
-from utils import hiphenReplc, encoding
+from utilFuncs import hiphenReplc, encoding
 
 class Model(object) :
 
@@ -85,8 +85,8 @@ class Model(object) :
         self.avgMatchTime = totalSec/self.totalListings
         self.matchedListCount = len(outputMat)
 
-        invIndList = {k:v for v,k in self._indexedList.items()}
-        invIndProd = {k:v for v,k in self._indexedProds.items()}
+        invIndList = {k:json.loads(v) for v,k in self._indexedList.items()}
+        invIndProd = {k:json.loads(v) for v,k in self._indexedProds.items()}
 
         outDic = {}
         for k,v in outputMat:
@@ -96,8 +96,7 @@ class Model(object) :
             else:
                 outDic[v] = {}
                 outDic[v]['list'] = []
-                titleEnd = invIndProd[v].index(',')
-                outDic[v]['product title'] = invIndProd[v][16:titleEnd]
+                outDic[v]['product title'] = invIndProd[v]['product_name']
                 if k in invIndList.keys():
                     outDic[v]['list'].append(invIndList[k])
 

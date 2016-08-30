@@ -1,10 +1,11 @@
 """This module includes the implementation of the model as a class."""
 
 import numpy as np
+import json
 from pyspark import SparkContext
 from datetime import datetime
-import json
-import os
+from collections import OrderedDict
+
 
 from utilFuncs import hiphenReplc, encoding
 
@@ -92,19 +93,22 @@ class Model(object) :
         for k,v in outputMat:
             if v in outDic.keys():
                 if k in invIndList.keys():
-                    outDic[v]['list'].append(invIndList[k])
+                    outDic[v]['listings'].append(invIndList[k])
             else:
-                outDic[v] = {}
-                outDic[v]['list'] = []
+                outDic[v] = OrderedDict()
+                outDic[v]['listings'] = []
                 outDic[v]['product title'] = invIndProd[v]['product_name']
                 if k in invIndList.keys():
-                    outDic[v]['list'].append(invIndList[k])
+                    outDic[v]['listings'].append(invIndList[k])
 
         outJson = list(outDic.values())
         self.matchedProdCount = len(outJson)
         with open(resultFile,'w') as f:
             for i in range(len(outJson)):
-                json.dump(outJson[i], f)
+                tmp = OrderedDict()
+                tmp['product title'] = outJson[i]['product title']
+                tmp['listings'] = outJson[i]['listings']
+                json.dump(tmp, f)
                 f.write('\n')
 
 

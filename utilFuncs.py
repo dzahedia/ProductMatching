@@ -1,6 +1,7 @@
 from pyspark.mllib.linalg import SparseVector
 
 def hiphenReplc(a):
+    """A helper function to handle - and _"""
     out = []
     for i in a:
         b = i
@@ -13,9 +14,7 @@ def hiphenReplc(a):
     return out
 
 def encoding(tokens, theDict):
-    """Produce a one-hot-encoding from a list of tokens and an OHE dictionary.
-
-    """
+    """Produce a one-hot-encoding from a list of tokens and an OHE dictionary."""
     tempList = []
     for item in tokens:
         if item in theDict.keys():

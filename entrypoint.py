@@ -1,8 +1,17 @@
-from utils import *
+from utilFuncs import *
 from model import Model
+import os
+
+runFile=os.path.abspath('entrypoint.py')
+runDir=os.path.dirname(runFile)
+hadoopPath='file://' + runDir
 
 resultsFile = "result/results.txt"
 summaryFile = "result/summary.txt"
+
+# If your Spark is on a Hadoop culster, uncomment the two following lines and comment the two after
+#productsFile= hadoopPath + "/data/products.txt"
+#listingsFile = hadoopPath + "/data/listings.txt"
 productsFile = "data/products.txt"
 listingsFile = "data/listings.txt"
 

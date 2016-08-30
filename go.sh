@@ -1,13 +1,17 @@
 #! /bin/bash
+echo
 echo "----------------------------------------------"
-echo "-------------  David Zahedi ------------------"
+echo "-------------    David Zahedi    -------------"
 echo "----------------------------------------------"
-echo "Some setting info before we run the program"
+echo
+echo "Before we go:"
+echo "This program assumes that Python3, Spark and NumPy are installed in your system."
+echo "If your Spark is tied to a Hadoop Cluster; you need to uncomment/comment two lines in the entrypoint.py"
+echo
+echo "Good to know"
 echo "The results file location: results/results.txt"
 echo "The summary file location: results/summary.txt"
 echo "If you want, you can easily change those locations at entrypoint.py"
-echo
-echo "More importantly, this program assumes that Python3, Spark and NumPy are installed in your system."
 echo
 echo "Do you want to continue? (y/n)"
 read req

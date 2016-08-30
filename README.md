@@ -7,4 +7,6 @@ The products and listings files are in the data directory and the produced match
 
 This application is specific for json formatted files; however, it can easily be generalized for other formats.
 
-It can be used for batch processing as well as stream processing, and its API can be easily enriched.
+Also, it can be used for batch processing as well as stream processing, and its API can be easily enriched.
+
+Just clone and run go.sh

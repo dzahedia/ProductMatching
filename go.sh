@@ -1,5 +1,7 @@
 #! /bin/bash
 echo "----------------------------------------------"
+echo "-------------  David Zahedi ------------------"
+echo "----------------------------------------------"
 echo "Some setting info before we run the program"
 echo "The results file location: results/results.txt"
 echo "The summary file location: results/summary.txt"

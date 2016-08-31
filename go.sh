@@ -5,7 +5,7 @@ echo "-------------    David Zahedi    -------------"
 echo "----------------------------------------------"
 echo
 echo "Before we go:"
-echo "This program assumes that Python3, Spark (with PYSPARK_PYTHON=Python3) and NumPy are installed in your system. Also, make sure you have enough Java_Heap_Space"
+echo "This program assumes that Python3, Spark (with PYSPARK_PYTHON=Python3) and NumPy are installed in your system."
 echo "If your Spark is tied to a Hadoop Cluster; you need to uncomment/comment two lines in the entrypoint.py (it is on top, you won't miss it)"
 echo
 echo "Good to know:"
@@ -20,6 +20,7 @@ if [ "$req" == "y" ]
   echo
   echo "On a ThinkPad core i5, the program takes 2 minutes to run!"
   echo
+  export _JAVA_OPTIONS=-Xmx4g
   python3 entrypoint.py
 fi
 echo "Done"
